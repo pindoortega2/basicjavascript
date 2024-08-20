@@ -64,7 +64,18 @@ persona.direccion.postal = 123456; //Se agrega un dato mas al objeto persona den
 var piso = persona.direccion.edificio;
 piso.numpiso = "8vo piso";
 
-console.log(piso.numpiso);
+//console.log(piso.numpiso);
 
 //Notacion de corchete
-console.log(persona["edad"]);
+//console.log(persona["edad"]);
+
+
+
+//FUNCIONES
+//var a = 30;
+function miFuncion() {
+    var a = 30;
+    console.log( a );
+}
+
+miFuncion();
