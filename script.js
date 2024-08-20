@@ -79,3 +79,27 @@ function miFuncion() {
 }
 
 miFuncion();
+
+
+//FUNCIONES CON PARAMETROS
+function imprimir1(nombre, apellido) {
+    apellido = apellido || "Cualquier apellido"; //Esto quiere decir que si se declara en la llamada de la fncion en apellido sera ese nombre caso contrario se imprme el texto cualquier apellido
+    console.log(nombre, apellido);
+}
+
+
+//var nombre = "Andres" //Esto es una variable anonima para las funciones con parametros
+imprimir1("Andres"); //Esto es una variable anonima para las funciones con parametros
+
+// FUNCION CON OBJETO
+
+function imprimir(persona) {
+    console.log(persona.nombre + " "  + persona.apellido);
+}
+
+var obj = {
+    nombre: "Andres",
+    apellido: "Ortega Pindo",
+}
+
+//imprimir(obj);
