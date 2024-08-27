@@ -103,3 +103,11 @@ var obj = {
 }
 
 //imprimir(obj);
+
+
+//Este codigo es para realizar las funciones mas complicadas
+
+function complicado() {
+    var a = 1;
+    console.log(a);
+}
