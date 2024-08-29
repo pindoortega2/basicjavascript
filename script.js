@@ -78,7 +78,7 @@ function miFuncion() {
     console.log( a );
 }
 
-miFuncion();
+//miFuncion();
 
 
 //FUNCIONES CON PARAMETROS
@@ -89,7 +89,7 @@ function imprimir1(nombre, apellido) {
 
 
 //var nombre = "Andres" //Esto es una variable anonima para las funciones con parametros
-imprimir1("Andres"); //Esto es una variable anonima para las funciones con parametros
+//imprimir1("Andres"); //Esto es una variable anonima para las funciones con parametros
 
 // FUNCION CON OBJETO
 
@@ -105,9 +105,50 @@ var obj = {
 //imprimir(obj);
 
 
-//Este codigo es para realizar las funciones mas complicadas
+//Metodos y el objeto THIS
+var nombre = "Juan Carlos";
 
-function complicado() {
-    var a = 1;
-    console.log(a);
+var persona = {
+    nombre: "Maria",
+    apellido: "Dubon",
+    imprimirNombre : function () {
+        console.log(this.nombre, this.apellido); // Aqui el this recoje los datos de la variable persona que llega hacer un obj
+    },
+    direccion: {
+        pais: "Costa Rica",
+        obtenerPais: function(){
+            var self = this; // Con esto me retoma el this al obj direccion
+            var nuevaDireccion = function(){
+                console.log(self);
+                //console.log(this);  //Regresa a la ventana raiz (window)
+            }
+            nuevaDireccion();
+        }                    
+
+    }
+    
 }
+
+
+//persona.direccion.obtenerPais();
+//persona.imprimirNombre();
+//persona.direccion.obtenerPais();
+
+
+//La PALABRA RESERVADA NEW
+function person(nombre, apellido) {
+
+    this.nombre = nombre;
+    this.apellido = apellido;
+    this.edad = 30;
+
+    this.imprimirPersona = function() {
+        return this.nombre + " " + this.apellido + "(" + this.edad + ")"; 
+    }
+
+}
+
+var juan = new person("Andres", "Ortega"); //Cuando yo no coloco la palabra reservada new (el resultado sera undifined) regresa window con los paramwtros q le pase a la funcion persona en consola se lo puede ver con colocando la palabra this
+// si coloco la palabr new me regresa la funcion person como un objeto
+console.log(juan.imprimirPersona()); //Me imprime lo que esta dentro de this.imprimirPersona
+//console.log(juan); // me imprimero el objeto person
